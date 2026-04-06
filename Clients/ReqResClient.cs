@@ -1,8 +1,8 @@
 ﻿using reqresApiTests.Models;
 using System;
+
 using System.Net.Http;
 using System.Net.Http.Json;
-using System.Threading.Tasks;
 
 namespace reqresApiTests.Clients
 {
@@ -22,9 +22,7 @@ namespace reqresApiTests.Clients
 
             response.EnsureSuccessStatusCode();
 
-            var result = await response.Content.ReadFromJsonAsync<UserResponse>();
-
-            return result;
+            return await response.Content.ReadFromJsonAsync<UserResponse>();
         }
     }
 }
