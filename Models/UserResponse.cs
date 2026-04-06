@@ -7,7 +7,7 @@ using static Microsoft.ApplicationInsights.MetricDimensionNames.TelemetryContext
 
 namespace reqresApiTests.Models;
 
-internal class UserResponse
+public class UserResponse
 {
     public required User Data { get; set; }
 }
