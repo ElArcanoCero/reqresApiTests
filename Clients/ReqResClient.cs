@@ -14,6 +14,8 @@ namespace reqresApiTests.Clients
         {
             _httpClient = new HttpClient();
             _httpClient.BaseAddress = new Uri("https://reqres.in/api/");
+            _httpClient.DefaultRequestHeaders.Add("x-api-key", "pro_e748dd7fd2725b61f8b26eb31e94c5990c4666046ea661492e75d2b747095c2c");
+        
         }
 
         public async Task<UserResponse> GetUser(int id)
@@ -22,7 +24,12 @@ namespace reqresApiTests.Clients
 
             response.EnsureSuccessStatusCode();
 
-            return await response.Content.ReadFromJsonAsync<UserResponse>();
+            var result = await response.Content.ReadFromJsonAsync<UserResponse>();
+
+            if (result == null)
+                throw new Exception("La respuesta fue null o no se pudo deserializar");
+
+            return result;
         }
     }
 }
