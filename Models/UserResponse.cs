@@ -9,5 +9,5 @@ namespace reqresApiTests.Models;
 
 public class UserResponse
 {
-    public required User Data { get; set; }
+    public User Data { get; set; } = new();
 }

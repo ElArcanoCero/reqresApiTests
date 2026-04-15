@@ -18,9 +18,11 @@ namespace reqresApiTests.Tests
 
             var result = await client.GetUser(2);
 
+            result.Should().NotBeNull();
+            result.Data.Should().NotBeNull();
             result.Data.Id.Should().Be(2);
             result.Data.Email.Should().NotBeNullOrEmpty();
-            result.Data.First_Name.Should().NotBeNullOrEmpty();
+            result.Data.FirstName.Should().NotBeNullOrEmpty();
         }
     }
 }

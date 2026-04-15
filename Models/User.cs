@@ -14,10 +14,10 @@ namespace reqresApiTests.Models
         public string Email { get; set; } = string.Empty;
 
         [JsonPropertyName("first_name")]
-        public string First_Name { get; set; } = string.Empty;
+        public string FirstName { get; set; } = string.Empty;
 
         [JsonPropertyName("last_name")]
-        public string Last_Name { get; set; } = string.Empty;
+        public string LastName { get; set; } = string.Empty;
 
         public string Avatar { get; set; } = string.Empty;
 
